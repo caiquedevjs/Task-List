@@ -11,6 +11,9 @@ const btn= document.querySelector('#botao');
 
 const list = document.querySelector('#lista');
 
+// referenciando o card
+const card= document.querySelector('.card');
+
 const tasks=[
     
 ];
@@ -64,7 +67,6 @@ btn.onclick= function() {
 
 function removeSpan(){
     const spans= document.querySelectorAll('span');
-    const card= document.querySelector('.card');
     for (let i=0 ; i < spans.length; i++){
         card.removeChild(spans[i]);
     }

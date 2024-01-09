@@ -31,6 +31,12 @@ const renderTask=()=>{
         // passando as classes dos itens
 
         itemTask.setAttribute('class', 'list-group-item list-group-item-action');
+        
+        itemTask.onclick = function (){
+            removeTask(this);
+            
+        }
+        
 
         // criando um texto 
 
@@ -71,5 +77,9 @@ function removeSpan(){
         card.removeChild(spans[i]);
     }
 }
-    
 
+function removeTask(tar){
+    tasks.splice(tasks.indexOf(tar.textContent),1);
+    renderTask();
+}
+    

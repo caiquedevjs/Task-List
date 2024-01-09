@@ -1,4 +1,85 @@
 
-.card-body{
-    background-color: #940800;
+
+#display-id{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    background: linear-gradient(transparent, #ffffff00,transparent);
+    border: none;
+    margin: 1%;
+    padding: 1%;
+    height: 100%;
+    font-size: 2rem;
+    border-radius: 8px;
+    font-family: 'Orbitron', sans-serif;
+    animation: floating 2s ease-in-out infinite;
+    
+    color: #fff;
+}
+#texto-data{
+    animation: floating 2s ease-in-out infinite;
+}
+#horas-id, #minutos-id, #segundos-id {
+    display: inline-block;
+    width: 5rem; /* Defina a largura fixa desejada aqui */
+    text-align: center;
+    padding: 1%;
+    border-radius: 100px;
+    background-color: #313131
+    
+}
+#horas-id:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.4s;
+    color: black;
+   
+}
+#minutos-id:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color:transparent;
+    transition: 0.4s;
+    color: black;
+    
+}
+#segundos-id:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+    background-color:transparent;
+    transition: 0.4s;
+    color: black;
+    
+}
+h1{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem; 
+    background-color: transparent;
+    color: #313131;
+}
+#texto-data{
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+    letter-spacing: 2px;
+    margin-bottom: 1%; 
+    color: rgba(2, 2, 2, 0.87);
+}
+button{
+    color: #fff;
+    background-color: #313131;
+}
+
+@keyframes floating{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
+    }
 }

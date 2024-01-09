@@ -14,9 +14,9 @@ const list = document.querySelector('#lista');
 // referenciando o card
 const card= document.querySelector('.card');
 
-const tasks=[
-    
-];
+const tasks= JSON.parse(localStorage.getItem('tasks')) || [];
+
+
 // função para renderizar a tela
 const renderTask=()=>{
     list.innerHTML='';
@@ -65,7 +65,7 @@ btn.onclick= function() {
         renderTask();
         input.value='';
         removeSpan();
-        saveDateStorege()
+        saveDateStorege();
 }else{
     removeSpan();
     const card= document.querySelector('.card');
@@ -90,7 +90,7 @@ function removeSpan(){
 function removeTask(tar){
     tasks.splice(tasks.indexOf(tar.textContent),1);
     renderTask();
-    saveDateStorege()
+    saveDateStorege();
 }
 
 // salvar na memoria do na vegador local
@@ -99,3 +99,34 @@ function saveDateStorege(){
     localStorage.setItem('dateBaseTask', JSON.stringify(tasks));
 
 }
+
+
+function mostrar_motivacao() {
+    const texto_entrada = document.getElementById("motivacional-input");
+    const texto_recebido = texto_entrada.value;
+    const div_motivacao = document.getElementById("texto-output");
+    div_motivacao.innerHTML = `Sinta-se motivado(a) por ${texto_recebido}!`;
+    
+  }
+
+ 
+  function mostrar_displey() {
+    const data_texto = document.getElementById('texto-data');
+    const hora_visor = document.getElementById('horas-id');
+    const minutos_visor = document.getElementById('minutos-id');
+    const segundos_visor = document.getElementById('segundos-id');
+    const data = new Date();
+    const hora = data.getHours();
+    const minutos = data.getMinutes();
+    const segundos = data.getSeconds();
+    const dia = data.getDate();
+    const mes = data.toLocaleString('pt-BR', { month: 'long' });
+    const ano = data.getFullYear();
+    const dataFormatada = `${dia} de ${mes} de ${ano}`;
+    data_texto.innerHTML = dataFormatada;
+    hora_visor.innerHTML = hora;
+    minutos_visor.innerHTML = minutos;
+    segundos_visor.innerHTML = segundos;
+}
+mostrar_displey(); // Chama a função uma vez para exibir o tempo atual imediatamente
+setInterval(mostrar_displey, 1000); // Chama a função a cada segundo para atualizar o tempo

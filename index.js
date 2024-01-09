@@ -34,6 +34,7 @@ const renderTask=()=>{
         
         itemTask.onclick = function (){
             removeTask(this);
+
             
         }
         
@@ -51,7 +52,11 @@ const renderTask=()=>{
         list.appendChild(itemTask);
     }
 };
+//Redenrizar tela
+
 renderTask()
+
+// adicionar a tarefa na lista
 
 btn.onclick= function() {
     const itemInput= input.value;
@@ -60,6 +65,7 @@ btn.onclick= function() {
         renderTask();
         input.value='';
         removeSpan();
+        saveDateStorege()
 }else{
     removeSpan();
     const card= document.querySelector('.card');
@@ -71,15 +77,25 @@ btn.onclick= function() {
 }
     }
 
+// romover alertas
+
 function removeSpan(){
     const spans= document.querySelectorAll('span');
     for (let i=0 ; i < spans.length; i++){
         card.removeChild(spans[i]);
     }
 }
+// remover tarefas da lista
 
 function removeTask(tar){
     tasks.splice(tasks.indexOf(tar.textContent),1);
     renderTask();
+    saveDateStorege()
 }
-    
+
+// salvar na memoria do na vegador local
+
+function saveDateStorege(){
+    localStorage.setItem('dateBaseTask', JSON.stringify(tasks));
+
+}

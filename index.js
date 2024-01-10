@@ -14,7 +14,7 @@ const list = document.querySelector('#lista');
 // referenciando o card
 const card= document.querySelector('.card');
 
-const tasks= JSON.parse(localStorage.getItem('tasks')) || [];
+const tasks= JSON.parse(localStorage.getItem('dateBaseTask')) || [];
 
 
 // função para renderizar a tela
@@ -37,8 +37,6 @@ const renderTask=()=>{
 
             
         }
-        
-
         // criando um texto 
 
         const itemTextTask=document.createTextNode(task);
@@ -93,6 +91,7 @@ function removeTask(tar){
     saveDateStorege();
 }
 
+
 // salvar na memoria do na vegador local
 
 function saveDateStorege(){
@@ -100,16 +99,8 @@ function saveDateStorege(){
 
 }
 
+// mostrar o dysplay time na tela 
 
-function mostrar_motivacao() {
-    const texto_entrada = document.getElementById("motivacional-input");
-    const texto_recebido = texto_entrada.value;
-    const div_motivacao = document.getElementById("texto-output");
-    div_motivacao.innerHTML = `Sinta-se motivado(a) por ${texto_recebido}!`;
-    
-  }
-
- 
   function mostrar_displey() {
     const data_texto = document.getElementById('texto-data');
     const hora_visor = document.getElementById('horas-id');

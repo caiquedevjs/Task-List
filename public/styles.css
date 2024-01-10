@@ -83,3 +83,7 @@ button{
         transform: translateY(0);
     }
 }
+
+.sublinhada {
+    text-decoration: underline;
+}
